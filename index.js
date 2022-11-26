@@ -17,14 +17,17 @@ const tempProduct = fs.readFileSync(
   `${__dirname}/templates/template-product.html`,
   'utf-8'
 );
-const css = fs.readFileSync(`${__dirname/style.css}`)
-
+// external css and image file
+const css = fs.readFileSync("./style.css")
+const hero=fs.readFileSync('./hero.png')
+// data
 const data = fs.readFileSync(`${__dirname}/dev-data/data.json`, 'utf-8');
 const dataObj = JSON.parse(data);
 
 // const slugs = dataObj.map(el => slugify(el.productName, { lower: true }));
 // console.log(slugs);
 
+// main server and work
 const server = http.createServer((req, res) => {
   const { query, pathname } = url.parse(req.url, true);
 
@@ -54,13 +57,20 @@ const server = http.createServer((req, res) => {
     });
     res.end(data);
 
-    // Not found
-  }else if(req.url==='/css'){
+    // css
+  }else if(req.url==='/style.css'){
     
     res.writeHead(200, { 'Content-Type': 'text/css' })
     res.write(css)
     res.end()
-  } 
+    // image
+  } else if(req.url==='/hero.png'){
+    res.writeHead(200, { 'Content-Type': 'image/png'})
+    
+    res.write(hero)
+    res.end()
+  }
+  // Not Found
   else {
     res.writeHead(404, {
       'Content-type': 'text/html',
