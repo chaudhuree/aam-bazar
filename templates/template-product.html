@@ -18,30 +18,43 @@
   </head>
 
   <body>
-    <div class="container">
-      <h1>আম বাজার</h1>
+    <div class="container__full">
+      <div class="heading">
+        <h1 class="heading__content">আম বাজার</h1>
+      </div>
 
       <figure class="product">
         <a href="/overview" class="product__back">
           <span class="emoji-left">👈</span>Back
         </a>
-        <div class="product__hero">
-          <img src="{%HEROIMAGE%}" alt="{%PRODUCTNAME%}" />
-        </div>
-        <h2 class="product__name">{%PRODUCTNAME%}</h2>
-        <div class="product__details">
-          <p class="product__headline">{%HEADLINE%}</p>
-          <p class="product__from">উৎপাদন অঞ্চল: {%FROM%}</p>
-          <p class="product__weight">{%WEIGHT%}</p>
-          <p class="product__quantity">{%QUANTITY%}</p>
-          <p class="product__description">{%DESCRIPTION%}</p>
-          <p class="product__price">{%PRICE%}€</p>
-        </div>
+        <div class="product__box">
+          <div class="product__box--left w-3">
+            <h2 class="product__name mb-4">{%PRODUCTNAME%}</h2>
 
-        <a href="#" class="product__link">
-          <span class="emoji-left">🛒</span>
-          <span>কিনে ফেলুন ({%PRICE%}€)</span>
-        </a>
+            <p class="product__headline mb-4">{%HEADLINE%}</p>
+            <p class="product__from"><b>উৎপাদন অঞ্চল:</b> {%FROM%}</p>
+          </div>
+          <div class="product__box--middle w-3">
+            <div class="product__hero">
+              <img src="{%HEROIMAGE%}" alt="{%PRODUCTNAME%}" />
+            </div>
+          </div>
+          <div class="product__box--right w-3">
+            <p class="product__weight mb-4"><b>✔️ ওজন:</b> {%WEIGHT%}</p>
+            <p class="product__quantity"><b>✔️ পরিমাণ:</b> {%QUANTITY%}</p>
+
+            <p class="product__price">{%PRICE%}€</p>
+          </div>
+        </div>
+        <div class="product__details">
+          <p class="product__description">{%DESCRIPTION%}</p>
+        </div>
+        <div class="product__cart">
+          <a href="#" class="product__link">
+            <span class="emoji-left">🛒</span>
+            <span>ক্রয় করুন ({%PRICE%}€)</span>
+          </a>
+        </div>
       </figure>
     </div>
   </body>
