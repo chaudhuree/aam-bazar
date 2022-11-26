@@ -8,7 +8,7 @@
 
 > **_Single Product Page :_**
 >
-> ![enter image description here](https://i.ibb.co/VY3f3Bq/single.png)
+> ![enter image description here](https://i.ibb.co/98NnnfN/single-product.png)
 
 - Download the file and extract
 - Then open it with a code editor
